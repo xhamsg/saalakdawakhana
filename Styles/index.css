@@ -24,16 +24,7 @@ header
     box-shadow: 0 0 40px black;
 
 }
-nav {
-    padding: 20px;
-    font-size: 18px;
-    font-weight: 500;
-}
-nav a {
-    padding: 5px;
-    text-decoration: none;
-    color: #fff;
-}
+
 header a
 {
     text-decoration: none;
@@ -45,51 +36,47 @@ header a
 header a:hover {
     color: #ecf0f1;
 }
-header a .logo{
+header .logo a {
     display: flex;
     align-items: center;
     font-size: 25px;
 }
-header a img{
+
+.logo a img{
     width: 40px;
     margin-right: 5px;
 }
-.menu-icon {
-    display: none; /*Initially hide on larger screens*/
+.nv-0 {
+    display: none;
     flex-direction: column;
     cursor: pointer;
 
 }
-.menu-icon .bar {
-    height: 2px;
-    width: 20px;
+.nv-0 .bar {
+    height: 3.5px;
+    width: 25px;
     background-color: #fff;
     margin: 3px 0;
     transition: background-color 0.3s ease;
 }
-.menu-toggle>i{
-    font-size: 1.5em;
+.closemenu{
+    display: none; 
+    flex-direction: column;
+    cursor: pointer;
     color: #fff;
 }
-.menu-toggle>i[name="menu-close"]{
-    display: none;
-}
-.menu-toggle
-{
-    display: none;
-}
-.nav>ul
-{
-    text-decoration: none;
-    list-style: none;
+nav {
     padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
 }
-.nav>ul>li>a
-{
+nav a {
+    padding: 5px;
     text-decoration: none;
-    list-style: none;
-    color: #ece6e6;
+    color: #fff;
+    font-size: 18px;
 }
+
 .banner-container>.banner>.img>img{
     margin-top: 2px;
     width: 100%;
@@ -135,8 +122,7 @@ header a img{
     text-align: center;
     font-size: 32px;
 }
-.container
-{
+.container{
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(4,2fr);
@@ -180,9 +166,7 @@ header a img{
     height: 150px;
     width: 150px;
 }
-.contact-cards .whats-card:hover{
-    color: green;
-}
+
 .contact-cards .messanger-card{
     font-size: 80px;
     border: 1px solid;
@@ -308,6 +292,73 @@ input{
     outline: none;
 }
 @media (max-width: 425px){
+    
+    header nav{
+        height: 70vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(58, 94, 253);
+        opacity: 90%;
+        transition: top 1s ease;
+        display: none;
+    }
+    header nav .closemenu{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .nv-0{
+        display: block;
+
+    }
+    .about_1
+    {
+        display: grid;
+        grid-template-columns: repeat(1, 2fr);
+        justify-content: space-evenly;
+        padding: 0px 0 0 ;
+        margin: 70px 30px 0 0;
+        text-align: justify;
+        
+    }
+    .about_1>img
+    {
+        right: 1%;
+        position: relative;
+        width: 250px;
+        height: 350px;
+        margin: 20px 0px 0 100px;
+        border-radius: 10px;
+        z-index: -1;
+    }
+    .container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .contact-cards .whats-card{
+        font-size: 80px;
+        border: 1px solid;
+        padding: 34px;
+        margin: 5px;
+        border-radius: 15px;
+        height: 150px;
+        width: 150px;
+    }
+    .contact-cards .messanger-card{
+        font-size: 80px;
+        border: 1px solid;
+        padding: 34px;
+        margin: 5px;
+        border-radius: 15px;
+        height: 150px;
+        width: 150px;    
+    }
     .p3-box{
         margin: 0px;
         display: inline-block;
@@ -351,45 +402,12 @@ input{
         margin-bottom: 10px;   
     }
 }
-@media (max-width: 1024px) {
+
+  @media (max-width: 1024px) {
     header{
         width: 100%;
     }
-
-}
-@media (max-width: 768px) {
-    .menu-icon {
-      display: flex;
+    .contact-page p{
+        margin: 20px;
     }
-
-    nav {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 70px; /*Adjust as needed*/
-      left: 0;
-      width: 100%;
-      background-color: #3498db;
-      padding: 10px;
-
-    }
-    nav a {
-        margin: 10px 0;
-      }
-
-    nav.open {
-      display: flex;
-    }
-
-    .menu-icon.open .bar {
-        background-color: #3498db;
-      } 
-      
-  }
-  @media (max-width: 425px){
-    header a img{
-        width: 30px;
-        margin-right: 5px;
-    }
-    
 }
